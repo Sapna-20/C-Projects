@@ -1,0 +1,59 @@
+Student Data Form (HTML + C++ + WAMP)
+
+This project shows how an HTML form can take student details and pass them to a C++ program, which then stores the information in a text file. The form runs on the WAMP server, and the C++ executable handles file writing.
+
+Project Files
+StudentForm.html        – The student form displayed in the browser  
+studenData.cpp          – C++ source code  
+studenData.exe          – Compiled program used to save the data  
+studentData.txt         – Output file where the data is stored  
+README.md               – Project documentation
+
+Purpose of the Project
+
+The aim of this project is to demonstrate a simple workflow where user input from a web form is processed by a C++ program and saved to a text file. This is useful for beginners who want to understand how frontend input can be connected with backend logic using WAMP.
+
+How to Run the Project
+1. Install and Start WAMP
+
+Download and install WAMP. Start the server and make sure it is running properly.
+
+2. Place the Project in the WAMP Directory
+
+Copy the entire project folder into:
+
+C:\wamp64\www\FormSubmission_Project
+
+3. Compile the C++ Program
+
+Open a terminal in the project folder and compile the file:
+
+g++ studenData.cpp -o studenData.exe
+
+
+Ensure that the executable file is placed in the same directory as the HTML form.
+
+4. Open the Form in the Browser
+
+Run the following link in your browser:
+
+http://localhost/FormSubmission_Project/StudentForm.html
+
+5. Submit the Form
+
+Fill out the student details in the form and submit it.
+The WAMP server triggers the C++ executable, which receives the input and writes it into:
+
+studentData.txt
+
+How the System Works
+
+The user fills out the form in the HTML page.
+
+The form submission executes the C++ program.
+
+The C++ program reads the provided values and writes them into a text file.
+
+Notes
+
+This is a simple demonstration project intended for learning purposes. It shows basic interaction between HTML, WAMP, and a C++ program.
