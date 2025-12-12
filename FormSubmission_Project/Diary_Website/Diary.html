@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Diary</title>
+
+<style>
+/* ===========================
+   GLOBAL PAGE SETTINGS
+=========================== */
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff7fa;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    overflow-x: hidden;
+}
+
+/* ======================================================
+   RESPONSIVE + ANIMATED FLOWERS (TOP & BOTTOM CORNERS)
+====================================================== */
+.flower {
+    position: fixed;
+    width: 15vw; /* Responsive based on screen width */
+    max-width: 160px;
+    min-width: 70px;
+    opacity: 0.85;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    animation: floatFlower 6s ease-in-out infinite alternate;
+}
+
+/* Positions */
+.flower-top-left { top: 0; left: 0; }
+.flower-top-right { top: 0; right: 0; transform: scaleX(-1); }
+.flower-bottom-left { bottom: 0; left: 0; }
+.flower-bottom-right { bottom: 0; right: 0; transform: scaleX(-1); }
+
+/* Floating animation */
+@keyframes floatFlower {
+    from { transform: translateY(0) scale(1); }
+    to   { transform: translateY(-10px) scale(1.02); }
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 480px) {
+    .flower {
+        width: 25vw;
+        max-width: 120px;
+        min-width: 60px;
+        opacity: 0.75;
+    }
+}
+
+/* ===========================
+   MAIN DIARY BOX (RESPONSIVE)
+=========================== */
+.container {
+    margin: 100px auto;
+    width: 90%; /* Responsive */
+    max-width: 700px; /* Beautiful on desktop */
+    padding: 35px;
+    background: #ffffffee;
+    border-radius: 30px;
+    box-shadow: 0px 0px 30px #ffb6c1;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* ===========================
+   TEDDY BEAR (RESPONSIVE)
+=========================== */
+.teddy {
+    width: 30%;
+    max-width: 180px;
+    min-width: 100px;
+    margin: 0 auto 15px;
+    display: block;
+    animation: teddyFloat 4s ease-in-out infinite alternate;
+}
+
+/* Teddy floating animation */
+@keyframes teddyFloat {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-8px); }
+}
+
+/* ===========================
+   HEADINGS
+=========================== */
+h1 {
+    margin-bottom: 20px;
+    color: #ff6f91;
+    text-shadow: 1px 1px 2px #ffcce1;
+    font-size: 2rem;
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #ffc8d2;
+    background: #fff2f4;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* ===========================
+   TEXTAREA with LINED PAPER
+=========================== */
+textarea {
+    width: 100%;
+    min-height: 240px;
+    padding: 15px 20px;
+    resize: vertical;
+
+    /* Lined notebook effect */
+    background: 
+        repeating-linear-gradient(
+            #fff2f4,
+            #fff2f4 28px,
+            #f8b8c8 29px      /* line color */
+        );
+
+    border-radius: 10px;
+    border: 2px solid #ffc8d2;
+    font-size: 18px;
+    line-height: 28px;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+button {
+    padding: 14px 20px;
+    background: #ff8fab;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    max-width: 250px;
+}
+
+button:hover {
+    background: #ff6f91;
+    transform: scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===========================
+     RESPONSIVE FLOWERS
+=========================== -->
+<img src="/diary_assets/flower2.png" class="flower flower-top-left">
+<img src="/diary_assets/flower2.png" class="flower flower-top-right">
+<img src="/diary_assets/flower2.png" class="flower flower-bottom-left">
+<img src="/diary_assets/flower2.png" class="flower flower-bottom-right">
+
+<!-- ===========================
+     DIARY BOX
+=========================== -->
+<div class="container">
+
+    <!-- Teddy -->
+    <img src="/diary_assets/flower4.jpeg" class="teddy">
+
+    <h1>My Cute Diary......</h1>
+
+    <form action="/cgi-bin/diary.exe" method="post">
+        <input type="text" name="date" placeholder="Enter Date (YYYY-MM-DD)">
+        <textarea name="entry" placeholder="Write your thoughts here..."></textarea>
+        <button type="submit">Save Diary</button>
+    </form>
+
+</div>
+
+</body>
+</html>
