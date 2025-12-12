@@ -1,0 +1,40 @@
+# My Cute Diary — HTML + C++ CGI
+
+A simple diary web application built using **HTML/CSS** for the frontend and **C++ CGI** as the backend to save diary entries.
+
+## Features
+- Cute aesthetic UI (flowers + teddy)
+- Lined notebook-style textarea
+- Fully responsive layout
+- Saves diary entries as text files
+- Works with WAMP / Apache CGI
+
+## Project Structure
+diary.html
+cgi-bin/
+diary.cpp
+diary.exe
+diary_assets/
+flower2.png
+flower4.jpeg
+
+
+
+## How to Run (WAMP)
+1. Enable CGI module in Apache.
+2. Add this in `httpd.conf`:
+ScriptAlias /cgi-bin/ "c:/wamp64/www/cgi-bin/"
+AddHandler cgi-script .exe
+
+
+3. Compile backend:
+g++ diary.cpp -o diary.exe
+
+
+4. Open in browser:
+http://localhost/diary.html
+
+
+## Description
+The user writes a diary entry, and the C++ backend saves it as  
+** YYYY-MM-DD.txt ** automatically.
